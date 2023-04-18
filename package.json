@@ -6,7 +6,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "antlr4ts": "antlr4ts ./JabutiGrammar.g4 -o ./src/antlr"
+    "build": "antlr4ts ./JabutiGrammar.g4 -o ./dist"
   },
   "repository": {
     "type": "git",

@@ -27,6 +27,11 @@
 yarn install
 ```
 
+## Build
+```sh
+yarn build
+```
+
 ## Author
 
 👤 **The Applied Computing Research Group (GCA)**
