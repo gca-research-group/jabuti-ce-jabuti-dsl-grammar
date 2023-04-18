@@ -1,56 +1,46 @@
-<h1 align="center">Welcome to jabuti-dsl-language-antlr 👋</h1>
+# Jabuti DSL
+> This project implements the Jabuti DSL grammar using ANTLR4.
 <p>
-  <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
-  <img src="https://img.shields.io/badge/npm-%3E%3D9.0.0-blue.svg" />
-  <img src="https://img.shields.io/badge/node-%3E%3D16.0.0-blue.svg" />
-  <a href="https://github.com/gca-research-group/jabuti-dsl-language-antlr#readme" target="_blank">
-    <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
-  </a>
-  <a href="https://github.com/gca-research-group/jabuti-dsl-language-antlr/graphs/commit-activity" target="_blank">
-    <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
-  </a>
-  <a href="https://github.com/gca-research-group/jabuti-dsl-language-antlr/blob/master/LICENSE" target="_blank">
-    <img alt="License: MIT" src="https://img.shields.io/github/license/gca-research-group/jabuti-dsl-language-antlr" />
-  </a>
+    <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
+    <img src="https://img.shields.io/badge/node-%3E%3D16.0.0-green.svg" />
 </p>
 
-### 🏠 [Homepage](https://github.com/gca-research-group/jabuti-dsl-language-antlr#readme)
+![](header.png)
 
-## Prerequisites
+## Installation
 
-- npm >=9.0.0
-- node >=16.0.0
+Clone this repository
 
-## Install
+```sh
+git clone git@github.com:gca-research-group/jabuti-dsl-language-antlr.git
+```
+
+Run the installation command in the folder
 
 ```sh
 yarn install
 ```
 
 ## Build
+
+Run the build command in the folder
+
 ```sh
 yarn build
 ```
 
-## Author
+## Contributing
 
-👤 **The Applied Computing Research Group (GCA)**
+1. Fork it (<https://github.com/yourname/yourproject/fork>)
+2. Create your feature branch (`git checkout -b feature/fooBar`)
+3. Commit your changes (`git commit -am 'Add some fooBar'`)
+4. Push to the branch (`git push origin feature/fooBar`)
+5. Create a new Pull Request
 
-* Website: http://www.gca.unijui.edu.br
-* Github: [@gca-research-group](https://github.com/gca-research-group)
-
-## 🤝 Contributing
-
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/gca-research-group/jabuti-dsl-language-antlr/issues). You can also take a look at the [contributing guide](https://github.com/gca-research-group/jabuti-dsl-language-antlr/blob/master/CONTRIBUTING.md).
-
-## Show your support
-
-Give a ⭐️ if this project helped you!
-
-## 📝 License
-
-Copyright © 2023 [The Applied Computing Research Group (GCA)](https://github.com/gca-research-group).<br />
-This project is [MIT](https://github.com/gca-research-group/jabuti-dsl-language-antlr/blob/master/LICENSE) licensed.
-
-***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
+<!-- Markdown link & img dfn's -->
+[npm-image]: https://img.shields.io/npm/v/datadog-metrics.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/datadog-metrics
+[npm-downloads]: https://img.shields.io/npm/dm/datadog-metrics.svg?style=flat-square
+[travis-image]: https://img.shields.io/travis/dbader/node-datadog-metrics/master.svg?style=flat-square
+[travis-url]: https://travis-ci.org/dbader/node-datadog-metrics
+[wiki]: https://github.com/yourname/yourproject/wiki
