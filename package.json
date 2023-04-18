@@ -1,10 +1,23 @@
 {
-  "name": "antlr",
+  "name": "jabuti-dsl-language-antlr",
   "version": "1.0.0",
+  "author": "The Applied Computing Research Group (GCA)",
+  "homepage": "https://github.com/gca-research-group/jabuti-dsl-language-antlr#readme",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
     "antlr4ts": "antlr4ts ./JabutiGrammar.g4 -o ./src/antlr"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gca-research-group/jabuti-dsl-language-antlr.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gca-research-group/jabuti-dsl-language-antlr/issues"
+  },
+  "engines": {
+    "npm": ">=9.0.0",
+    "node": ">=16.0.0"
   },
   "dependencies": {
     "antlr4ts": "^0.5.0-alpha.4",
