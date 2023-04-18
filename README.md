@@ -1,6 +1,7 @@
 <h1 align="center">
   <br>
-  <img src="https://raw.githubusercontent.com/gca-research-group/jabuti-dsl-language-antlr/main/turtle.png?token=GHSAT0AAAAAACBSV2SPODRG6HGRDFX5SM4SZB7CRCQ" alt="Jabuti" width="200">
+
+  ![image info](turtle.png)
   <br>
   Jabuti DSL
   <br>
@@ -36,10 +37,8 @@ $ yarn build
 4. Push to the branch (`git push origin feature/fooBar`)
 5. Create a new Pull Request
 
-<!-- Markdown link & img dfn's -->
-[npm-image]: https://img.shields.io/npm/v/datadog-metrics.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/datadog-metrics
-[npm-downloads]: https://img.shields.io/npm/dm/datadog-metrics.svg?style=flat-square
-[travis-image]: https://img.shields.io/travis/dbader/node-datadog-metrics/master.svg?style=flat-square
-[travis-url]: https://travis-ci.org/dbader/node-datadog-metrics
-[wiki]: https://github.com/yourname/yourproject/wiki
+
+## License
+
+Copyright © 2023 [The Applied Computing Research Group (GCA)](https://github.com/gca-research-group).<br />
+This project is [MIT](https://github.com/gca-research-group/jabuti-dsl-language-antlr/blob/master/LICENSE) licensed.
