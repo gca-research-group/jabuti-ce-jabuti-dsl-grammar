@@ -1,33 +1,32 @@
-# Jabuti DSL
-> This project implements the Jabuti DSL grammar using ANTLR4.
-<p>
+<h1 align="center">
+  <br>
+  <img src="https://raw.githubusercontent.com/gca-research-group/jabuti-dsl-language-antlr/main/turtle.png?token=GHSAT0AAAAAACBSV2SPODRG6HGRDFX5SM4SZB7CRCQ" alt="Jabuti" width="200">
+  <br>
+  Jabuti DSL
+  <br>
+</h1>
+
+<h4 align="center">A implementation of Jabuti DSL grammar using <a href="https://www.antlr.org/" target="_blank">ANTLR4</a>.</h4>
+
+<p align="center">
     <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
     <img src="https://img.shields.io/badge/node-%3E%3D16.0.0-green.svg" />
 </p>
 
-![](header.png)
 
-## Installation
+## How to use
 
-Clone this repository
+```bash
+# clone this repository
+$ git clone git@github.com:gca-research-group/jabuti-dsl-language-antlr.git
 
-```sh
-git clone git@github.com:gca-research-group/jabuti-dsl-language-antlr.git
+# run the installation command in the folder
+$ yarn install
+
+# run the build command in the folder
+$ yarn build
 ```
 
-Run the installation command in the folder
-
-```sh
-yarn install
-```
-
-## Build
-
-Run the build command in the folder
-
-```sh
-yarn build
-```
 
 ## Contributing
 
