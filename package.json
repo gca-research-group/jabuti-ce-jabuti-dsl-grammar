@@ -1,12 +1,21 @@
 {
   "name": "jabuti-dsl-language-antlr",
   "version": "1.0.0",
-  "author": "The Applied Computing Research Group (GCA)",
+  "author": "The Applied Computing Research Group <mailson.borges@sou.unijui.edu.br> (GCA)",
   "homepage": "https://github.com/gca-research-group/jabuti-dsl-language-antlr#readme",
+  "description": "A implementation of Jabuti DSL grammar using ANTLR4.",
   "main": "index.js",
+  "keywords": [
+    "jabuti",
+    "dsl",
+    "antlr",
+    "antlr4",
+    "unijui",
+    "gca"
+  ],
   "license": "MIT",
   "scripts": {
-    "build": "antlr4ts ./JabutiGrammar.g4 -o ./dist"
+    "build": "antlr4ts ./JabutiGrammar.g4 -o ./dist && tsc -b"
   },
   "repository": {
     "type": "git",
