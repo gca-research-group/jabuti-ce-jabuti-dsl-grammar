@@ -1,7 +1,6 @@
 <h1 align="center">
   <br>
-
-  ![image info](turtle.png)
+  <img src="turtle.png" width="200" alt="Jabuti DSL">
   <br>
   Jabuti DSL
   <br>
