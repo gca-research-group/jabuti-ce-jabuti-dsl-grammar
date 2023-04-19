@@ -13,6 +13,10 @@
     <img src="https://img.shields.io/badge/node-%3E%3D16.0.0-green.svg" />
 </p>
 
+## Reference articles
+- [Advances in a DSL to Specify Smart Contracts for Application Integration Processes](https://sol.sbc.org.br/index.php/cibse/article/view/20962)
+- [On the Need to Use Smart Contracts in Enterprise Application Integration](https://idus.us.es/handle/11441/140199)
+
 
 ## How to use
 
