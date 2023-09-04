@@ -133,12 +133,12 @@ variableStatement
     :
     variableName
     Assign
-    (StringLiteral|Digit)
+    (StringLiteral|number)
     ;
 
 variableName
     :
-    (Word(Under|Digit|Word)*)
+    (Word(Under|number|Word)*)
     ;
 
 dates
@@ -270,7 +270,7 @@ sessionInterval
     :
     SessionInterval
     OpenParen
-    Digit
+    number
     (Second|Minute|Day|Week|Month)
     CloseParen
     ;
@@ -291,7 +291,7 @@ timeout
     :
     Timeout
     OpenParen
-    Digit
+    number
     CloseParen
     ;
 
@@ -329,7 +329,7 @@ maxNumberOfOperation
     :
     MaxNumberOfOperation
     OpenParen
-    Digit
+    number
     Per
     (Second|Hour|Minute|Day|Week|Month)
     CloseParen
@@ -346,15 +346,15 @@ messageContent
 messageContentNumeric
     :
     variableName
-    (equal|notEqual|greaterThan|lassThan)
-    Digit
+    (equal|notEqual|greaterThan|lassThan|Greater|Lass)
+    number
     (Per (Second|Hour|Minute|Day|Week|Month))?
     ;
 
 messageContentString
     :
     StringLiteral
-    ((equal|notEqual) StringLiteral)?
+    ((equal|notEqual|greaterThan|lassThan|Greater|Lass) (StringLiteral|number))?
     ;
 
 equal
@@ -458,4 +458,14 @@ month
 
 year
     : Digit
+    ;
+
+number
+    : N00_09
+    | N10_12
+    | N13_24
+    | N25_29
+    | N30_31
+    | N32_59
+    | Digit
     ;
