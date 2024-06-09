@@ -14,6 +14,7 @@ Obligation: 'obligation';
 RolePlayer: 'rolePlayer';
 Operation: 'operation';
 OnBreach: 'onBreach';
+OnSuccess: 'OnSuccess';
 Push: 'push';
 Poll: 'poll';
 Read: 'read';
@@ -133,7 +134,7 @@ variableStatement
     :
     variableName
     Assign
-    (StringLiteral|number)
+    (StringLiteral|number|conditionalTerm)
     ;
 
 variableName
@@ -196,36 +197,36 @@ process
 right
     :
     Right
-    Word
+    variableName
     OpenBrace
     rolePlayer
     operation
     terms
-    onBreach?
+    (onBreach|OnSuccess)?
     CloseBrace
     ;
 
 prohibition
     :
     Prohibition
-    Word
+    variableName
     OpenBrace
     rolePlayer
     operation
     terms
-    onBreach?
+    (onBreach|OnSuccess)?
     CloseBrace
     ;
 
 obligation
     :
     Obligation
-    Word
+    variableName
     OpenBrace
     rolePlayer
     operation
     terms
-    onBreach?
+    (onBreach|OnSuccess)?
     CloseBrace
     ;
 
@@ -279,7 +280,7 @@ when
     :
     When
     OpenParen
-    conditionalTerm
+    (conditionalTerm|variableName)
     CloseParen
     Do
     OpenBrace
@@ -347,8 +348,7 @@ messageContentNumeric
     :
     variableName
     (equal|notEqual|greaterThan|lassThan|Greater|Lass)
-    number
-    (Per (Second|Hour|Minute|Day|Week|Month))?
+    ((number (Per (Second|Hour|Minute|Day|Week|Month))?) | variableName)
     ;
 
 messageContentString
