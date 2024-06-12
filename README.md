@@ -18,7 +18,7 @@
 - [Advances in a DSL to Specify Smart Contracts for Application Integration Processes](https://sol.sbc.org.br/index.php/cibse/article/view/20962)
 - [On the Need to Use Smart Contracts in Enterprise Application Integration](https://idus.us.es/handle/11441/140199)
 
-## Jabuti DSL Metamodel
+## Jabuti DSL metamodel
 <p align="center">
     <img alt="Jabuti DSL Metamodel" src="metamodel.svg" />
 </p>
