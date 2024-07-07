@@ -14,6 +14,15 @@
     <img src="https://img.shields.io/badge/node-%3E%3D16.0.0-green.svg" />
 </p>
 
+# Table of content
+- [Reference articles](#reference-articles)
+- [Jabuti DSL metamodel](#jabuti-dsl-metamodel)
+- [Variables](#variables)
+- [Dates](#dates)
+- [Clauses](#clauses)
+  - [Timeout](#timeout)
+  - [MessageContent](#messagecontent)
+
 ## Reference articles
 - [Advances in a DSL to Specify Smart Contracts for Application Integration Processes](https://sol.sbc.org.br/index.php/cibse/article/view/20962)
 - [On the Need to Use Smart Contracts in Enterprise Application Integration](https://idus.us.es/handle/11441/140199)
@@ -23,9 +32,7 @@
     <img alt="Jabuti DSL Metamodel" src="metamodel.svg" />
 </p>
 
-## Grammar rules
-
-### Variables
+## Variables
 
 The following list describes the rules for variables allowed in the Jabuti DSL grammar:
 
@@ -51,7 +58,7 @@ The following are examples with correct and incorrect variable names:
 - <span style="color: red">&cross;</span> **123**
 
 
-### Dates
+## Dates
 
 Jabuti DSL dates follow the <a href="https://www.iso.org/iso-8601-date-and-time-format.html" target="_blank">ISO-8601</a> standard. A date can only contain year, month and day, just as it can contain hours, seconds and milliseconds.
 
@@ -62,6 +69,41 @@ The following are examples with correct and incorrect dates:
 - <span style="color: green">&check;</span> **1900-01-01 00:00:00**
 - <span style="color: green">&check;</span> **1900-01-01 00:00:00.000**
 - <span style="color: red">&cross;</span> **01/01/1900**
+
+## Clauses
+
+### Timeout
+
+Represents the maximum time in seconds that a response operation can take. Timeout can only be used in clauses whose operation is equal to response.
+
+```
+operation = response
+
+terms {
+  Timeout(150)
+  // ...
+}
+```
+
+### MessageContent
+Extracts the content of the message payload.
+
+```jabuti
+// Using xpath
+MessageContent("//root/name")
+
+// Using jsonpath
+MessageContent("$.[*].name")
+
+// Using variable
+MessageContent(var1 > 100)
+
+// Using value of xpath/jsonpath to evaluate a expression
+MessageContent("xpath" > 100)
+
+// Using value of xpath/jsonpath to evaluate a period of execution
+MessageContent("xpath" <= 5000 per Month)
+```
 
 ## How to compile
 - Requirements:
