@@ -72,6 +72,58 @@ The following are examples with correct and incorrect dates:
 
 ## Clauses
 
+Clauses can to be of three types: rigth, obligation and prohibition. A clause require a rolePlayer, the executor, an operation and terms.
+
+RolePlayer can be:
+- process
+- application
+
+Operation can be:
+- request
+- response
+- write
+- pull
+- push
+- poll
+
+Terms can be:
+- [Timeout](#timeout)
+- [SessionInterval](#sessioninterval)
+- [TimeInterval](#timeinterval)
+- [WeekDaysInterval](#weekdaysinterval)
+- [MaxNumberOfOperation](#maxnumberofoperation)
+- [MessageContent](#messagecontent)
+
+Excerpt of clauses:
+```
+clauses {
+  rigth clause1 {
+    rolePlayer = application
+    operation = request
+    terms {
+
+    }
+  }
+
+  obligation clause1 {
+    rolePlayer = application
+    operation = request
+    terms {
+
+    }
+  }
+
+  prohibition clause1 {
+    rolePlayer = process
+    operation = request
+    terms {
+
+    }
+  }
+
+}
+```
+
 ### Timeout
 
 Represents the maximum time in seconds that a response operation can take. Timeout can only be used in clauses whose operation is equal to response.
@@ -81,9 +133,63 @@ operation = response
 
 terms {
   Timeout(150)
-  // ...
 }
 ```
+
+### SessionInterval
+
+```
+SessionInterval(1 per Day)
+```
+
+Allowed intervals:
+- Second
+- Minute
+- Day
+- Week
+- Month
+
+### TimeInterval
+Defines an interval that a integration should happens. The interval needs be a valid hour.
+
+```
+TimeInterval(00:00:00 to 08:00:00)
+```
+
+Allowed patterns:
+- HH:MM
+- HH:MM:SS
+
+### WeekDaysInterval
+Represents an interval during the week at which integration should occur.
+
+```
+WeekDaysInterval(Monday to Wednesday)
+```
+
+Days of week can be:
+- Monday
+- Tuesday
+- Wednesday
+- Thursday
+- Friday
+- Saturday
+- Sunday
+
+### MaxNumberOfOperation
+Number of operations per unit of time
+
+```
+MaxNumberOfOperation(5 per Second)
+```
+
+The unit of time can be:
+- Second
+- Hour
+- Minute
+- Day
+- Week
+- Month
 
 ### MessageContent
 Extracts the content of the message payload.
