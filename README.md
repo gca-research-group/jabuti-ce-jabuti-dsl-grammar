@@ -21,11 +21,16 @@
 - [Dates](#dates)
 - [Clauses](#clauses)
   - [Timeout](#timeout)
+  - [SessionInterval](#sessioninterval)
+  - [TimeInterval](#timeinterval)
+  - [WeekDaysInterval](#weekdaysinterval)
+  - [MaxNumberOfOperation](#maxnumberofoperation)
   - [MessageContent](#messagecontent)
 
-## Reference articles
+## Jabuti project articles
 - [Advances in a DSL to Specify Smart Contracts for Application Integration Processes](https://sol.sbc.org.br/index.php/cibse/article/view/20962)
 - [On the Need to Use Smart Contracts in Enterprise Application Integration](https://idus.us.es/handle/11441/140199)
+- [Jabuti CE: A Tool for Specifying Smart Contracts in the Domain of Enterprise Application Integration](https://www.scitepress.org/Link.aspx?doi=10.5220/0012413300003645)
 
 ## Jabuti DSL metamodel
 <p align="center">
@@ -72,7 +77,7 @@ The following are examples with correct and incorrect dates:
 
 ## Clauses
 
-Clauses can to be of three types: rigth, obligation and prohibition. A clause require a rolePlayer, the executor, an operation and terms.
+Clauses can be of three types: rigth, obligation and prohibition. A clause require a rolePlayer, the executor, an operation and terms.
 
 RolePlayer can be:
 - process
