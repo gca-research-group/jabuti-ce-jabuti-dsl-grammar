@@ -92,7 +92,7 @@ N32_59
     : '3'   [2-9]
     | [4-5] [0-9]
     ;
-    
+
 Digit
     : [0-9]+
     ;
@@ -134,7 +134,7 @@ variableStatement
     :
     variableName
     Assign
-    (StringLiteral|number|conditionalTerm)
+    (StringLiteral|number|term)
     ;
 
 variableName
@@ -162,7 +162,7 @@ clauses
     :
     Clauses
     OpenBrace
-    (right|prohibition|obligation)+
+    clause+
     CloseBrace
     ;
     
@@ -170,14 +170,14 @@ beginDate
     :
     BeginDate
     Assign
-    dateOrDatetime
+    datetime
     ;
     
 dueDate
     :
     DueDate
     Assign
-    dateOrDatetime
+    datetime
     ;
     
 application
@@ -194,33 +194,9 @@ process
     StringLiteral
     ;
 
-right
+clause
     :
-    Right
-    variableName
-    OpenBrace
-    rolePlayer
-    operation
-    terms
-    (onBreach|OnSuccess)?
-    CloseBrace
-    ;
-
-prohibition
-    :
-    Prohibition
-    variableName
-    OpenBrace
-    rolePlayer
-    operation
-    terms
-    (onBreach|OnSuccess)?
-    CloseBrace
-    ;
-
-obligation
-    :
-    Obligation
+    (Right|Prohibition|Obligation)
     variableName
     OpenBrace
     rolePlayer
@@ -248,17 +224,17 @@ terms
     :
     Terms
     OpenBrace
-    (((conditionalTermOrWhen) Comma?)
-    |(OpenParen conditionalTermOrWhen Or conditionalTermOrWhen CloseParen Comma?))+
+    (((termOrWhen) Comma?)
+    |(OpenParen term (Or termOrWhen)* CloseParen Comma?))+
     CloseBrace
     ;
 
-conditionalTermOrWhen
-    : conditionalTerm
+termOrWhen
+    : term
     | when
     ;
 
-conditionalTerm
+term
     : maxNumberOfOperation
     | messageContent
     | weekDaysInterval
@@ -280,11 +256,11 @@ when
     :
     When
     OpenParen
-    (conditionalTerm|variableName)
+    (termOrWhen|variableName)
     CloseParen
     Do
     OpenBrace
-    conditionalTerm
+    termOrWhen
     CloseBrace
     ;
 
@@ -340,22 +316,17 @@ messageContent
     :
     MessageContent
     OpenParen
-    (messageContentNumeric|messageContentString)
+    (
+        StringLiteral |
+        (variableName|StringLiteral) comparator (variableName|StringLiteral|number) |
+        number comparator (variableName|StringLiteral) |
+        (StringLiteral|variableName) comparator number Per (Second|Hour|Minute|Day|Week|Month)
+    )
     CloseParen
     ;
 
-messageContentNumeric
-    :
-    variableName
-    (equal|notEqual|greaterThan|lassThan|Greater|Lass)
-    ((number (Per (Second|Hour|Minute|Day|Week|Month))?) | variableName)
-    ;
-
-messageContentString
-    :
-    StringLiteral
-    ((equal|notEqual|greaterThan|lassThan|Greater|Lass) (StringLiteral|number))?
-    ;
+comparator:
+    equal|notEqual|greaterThan|lassThan|Greater|Lass;
 
 equal
     :
@@ -392,15 +363,9 @@ onBreach
     CloseParen
     ;
 
-dateOrDatetime
-    :
-    (date|datetime)
-    ;
-
 datetime
     :
-    date
-    time
+    date time?
     ;
 
 date
