@@ -28,7 +28,7 @@
   - [MaxNumberOfOperation](#maxnumberofoperation)
   - [MessageContent](#messagecontent)
 
-## Jabuti project articles
+## Jabuti project papers
 - [Advances in a DSL to Specify Smart Contracts for Application Integration Processes](https://sol.sbc.org.br/index.php/cibse/article/view/20962)
 - [On the Need to Use Smart Contracts in Enterprise Application Integration](https://idus.us.es/handle/11441/140199)
 - [Jabuti CE: A Tool for Specifying Smart Contracts in the Domain of Enterprise Application Integration](https://www.scitepress.org/Link.aspx?doi=10.5220/0012413300003645)
