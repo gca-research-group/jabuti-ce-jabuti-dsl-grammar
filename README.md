@@ -15,7 +15,7 @@
 </p>
 
 # Table of content
-- [Reference articles](#reference-articles)
+- [Jabuti project papers](#jabuti-project-papers)
 - [Jabuti project articles](#jabuti-dsl-metamodel)
 - [Jabuti projetct repositories](#Jabuti-projetct-repositories)
 - [Variables](#variables)
