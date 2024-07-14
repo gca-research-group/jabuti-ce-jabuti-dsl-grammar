@@ -16,8 +16,8 @@
 
 # Table of content
 - [Jabuti project papers](#jabuti-project-papers)
-- [Jabuti project articles](#jabuti-dsl-metamodel)
 - [Jabuti projetct repositories](#Jabuti-projetct-repositories)
+- [Jabuti DSL metamodel](#jabuti-dsl-metamodel)
 - [Variables](#variables)
 - [Dates](#dates)
 - [Clauses](#clauses)
