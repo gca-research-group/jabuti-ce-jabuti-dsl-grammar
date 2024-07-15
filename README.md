@@ -1,7 +1,6 @@
 <h1 align="center">
   <br>
-  <img src="light.png#gh-light-mode-only" width="200" alt="Jabuti DSL">
-  <img src="dark.png#gh-dark-mode-only" width="200" alt="Jabuti DSL">
+  <img src="assets/logo-background-256.png" alt="Jabuti logo">
   <br>
   Jabuti DSL Grammar
   <br>
@@ -43,7 +42,7 @@
 
 ## Jabuti DSL metamodel
 <p align="center">
-    <img alt="Jabuti DSL Metamodel" src="metamodel.svg" />
+    <img alt="Jabuti DSL Metamodel" src="assets/metamodel.svg" />
 </p>
 
 ## Variables
