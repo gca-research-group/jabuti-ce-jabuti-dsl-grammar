@@ -67,34 +67,36 @@ Lass: '<';
 Under: '_';
 StringLiteral: '"' ~["]* '"';
 
-N00_09
-    : '0' [0-9]
-    ;
+// N00_09
+//     : '0' [0-9]
+//     ;
 
-N10_12
-    : '1' [0-2]
-    ;
+// N10_12
+//     : '1' [0-2]
+//     ;
 
-N13_24
-    : '1' [3-9]
-    | '2' [0-4]
-    ;
+// N13_24
+//     : '1' [3-9]
+//     | '2' [0-4]
+//     ;
 
-N25_29
-    : '2' [5-9]
-    ;
+// N25_29
+//     : '2' [5-9]
+//     ;
 
-N30_31
-    : '3' [0-1]
-    ;
+// N30_31
+//     : '3' [0-1]
+//     ;
 
-N32_59
-    : '3'   [2-9]
-    | [4-5] [0-9]
-    ;
+// N32_59
+//     : '3'   [2-9]
+//     | [4-5] [0-9]
+ //   ;
+
+ID: [a-zA-Z_][a-zA-Z_0-9]* ;
 
 Digit
-    : [0-9]+
+    : [0-9]
     ;
 
 Word
@@ -116,7 +118,7 @@ MULTI_COMMENT
 contract
     :
     (
-        Contract variableName OpenBrace
+        Contract ID OpenBrace
         (variables|dates|parties|clauses)*
         CloseBrace
     )?
@@ -132,14 +134,9 @@ variables
 
 variableStatement
     :
-    variableName
+    ID
     Assign
-    (StringLiteral|number|term)
-    ;
-
-variableName
-    :
-    (Word(Under|number|Word)*)
+    (StringLiteral|Digit+|term)
     ;
 
 dates
@@ -197,7 +194,7 @@ process
 clause
     :
     (Right|Prohibition|Obligation)
-    variableName
+    ID
     OpenBrace
     rolePlayer
     operation
@@ -247,7 +244,7 @@ sessionInterval
     :
     SessionInterval
     OpenParen
-    number
+    Digit+
     (Second|Minute|Day|Week|Month)
     CloseParen
     ;
@@ -256,7 +253,7 @@ when
     :
     When
     OpenParen
-    (termOrWhen|variableName)
+    (termOrWhen|ID)
     CloseParen
     Do
     OpenBrace
@@ -268,7 +265,7 @@ timeout
     :
     Timeout
     OpenParen
-    number
+    Digit+
     CloseParen
     ;
 
@@ -306,7 +303,7 @@ maxNumberOfOperation
     :
     MaxNumberOfOperation
     OpenParen
-    number
+    Digit+
     Per
     (Second|Hour|Minute|Day|Week|Month)
     CloseParen
@@ -318,9 +315,9 @@ messageContent
     OpenParen
     (
         StringLiteral |
-        (variableName|StringLiteral) comparator (variableName|StringLiteral|number) |
-        number comparator (variableName|StringLiteral) |
-        (StringLiteral|variableName) comparator number Per (Second|Hour|Minute|Day|Week|Month)
+        (ID|StringLiteral) comparator (ID|StringLiteral|Digit+) |
+        Digit+ comparator (ID|StringLiteral) |
+        (StringLiteral|ID) comparator Digit+ Per (Second|Hour|Minute|Day|Week|Month)
     )
     CloseParen
     ;
@@ -365,16 +362,13 @@ onBreach
 
 datetime
     :
-    date time?
-    ;
-
-date
-    : 
     year
-    (Divide|Minus)
+    Minus
     month
-    (Divide|Minus)
-    day;
+    Minus
+    day
+    time?
+    ;
 
 time
     :
@@ -385,52 +379,25 @@ time
     ;
 
 second
-    : N00_09
-    | N10_12
-    | N13_24
-    | N25_29
-    | N30_31
-    | N32_59
+    : Digit Digit?
     ;
 
 minute
-    : N00_09
-    | N10_12
-    | N13_24
-    | N25_29
-    | N30_31
-    | N32_59
+    : Digit Digit?
     ;
 
 hour
-    : N00_09
-    | N10_12
-    | N13_24
+    : Digit Digit?
     ;
 
 day
-    : N00_09
-    | N10_12
-    | N13_24
-    | N25_29
-    | N30_31
+    : Digit Digit?
     ;
 
 month
-    : N00_09
-    | N10_12
+    : Digit Digit?
     ;
 
 year
-    : Digit
-    ;
-
-number
-    : N00_09
-    | N10_12
-    | N13_24
-    | N25_29
-    | N30_31
-    | N32_59
-    | Digit
+    : Digit+
     ;
