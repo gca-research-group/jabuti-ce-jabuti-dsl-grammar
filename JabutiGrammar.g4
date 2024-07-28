@@ -50,7 +50,6 @@ Second: 'Second';
 When: 'when';
 Do: 'do';
 
-
 Comma : ',' ;
 SemiColon : ';' ;
 OpenParen : '(' ;
@@ -65,33 +64,8 @@ Exclamation: '!';
 Greater: '>';
 Lass: '<';
 Under: '_';
-StringLiteral: '"' ~["]* '"';
+String: '"' ~["]* '"';
 
-// N00_09
-//     : '0' [0-9]
-//     ;
-
-// N10_12
-//     : '1' [0-2]
-//     ;
-
-// N13_24
-//     : '1' [3-9]
-//     | '2' [0-4]
-//     ;
-
-// N25_29
-//     : '2' [5-9]
-//     ;
-
-// N30_31
-//     : '3' [0-1]
-//     ;
-
-// N32_59
-//     : '3'   [2-9]
-//     | [4-5] [0-9]
- //   ;
 
 ID: [a-zA-Z_][a-zA-Z_0-9]* ;
 
@@ -136,7 +110,7 @@ variableStatement
     :
     ID
     Assign
-    (StringLiteral|Digit+|term)
+    (String|Digit+|term)
     ;
 
 dates
@@ -181,14 +155,14 @@ application
     :
     Application
     Assign
-    StringLiteral
+    String
     ;
 
 process
     :
     Process
     Assign
-    StringLiteral
+    String
     ;
 
 clause
@@ -314,10 +288,10 @@ messageContent
     MessageContent
     OpenParen
     (
-        StringLiteral |
-        (ID|StringLiteral) comparator (ID|StringLiteral|Digit+) |
-        Digit+ comparator (ID|StringLiteral) |
-        (StringLiteral|ID) comparator Digit+ Per (Second|Hour|Minute|Day|Week|Month)
+        String |
+        (ID|String) comparator (ID|String|Digit+) |
+        Digit+ comparator (ID|String) |
+        (String|ID) comparator Digit+ Per (Second|Hour|Minute|Day|Week|Month)
     )
     CloseParen
     ;
@@ -355,7 +329,7 @@ onBreach
     OpenParen
     Log
     OpenParen
-    StringLiteral
+    String
     CloseParen
     CloseParen
     ;
