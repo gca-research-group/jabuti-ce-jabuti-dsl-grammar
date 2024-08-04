@@ -13,7 +13,7 @@
     <img src="https://img.shields.io/badge/node-%3E%3D16.0.0-green.svg" />
 </p>
 
-# Table of content
+# Table of contents
 - [Jabuti project papers](#jabuti-project-papers)
 - [Jabuti projetct repositories](#Jabuti-projetct-repositories)
 - [Jabuti DSL metamodel](#jabuti-dsl-metamodel)
