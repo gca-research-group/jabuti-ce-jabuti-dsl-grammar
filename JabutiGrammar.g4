@@ -110,7 +110,7 @@ variableStatement
     :
     ID
     Assign
-    (String|Digit+|term)
+    (String|digit|term)
     ;
 
 dates
@@ -218,7 +218,7 @@ sessionInterval
     :
     SessionInterval
     OpenParen
-    Digit+
+    digit
     (Second|Minute|Day|Week|Month)
     CloseParen
     ;
@@ -239,7 +239,7 @@ timeout
     :
     Timeout
     OpenParen
-    Digit+
+    digit
     CloseParen
     ;
 
@@ -277,7 +277,7 @@ maxNumberOfOperation
     :
     MaxNumberOfOperation
     OpenParen
-    Digit+
+    digit
     Per
     (Second|Hour|Minute|Day|Week|Month)
     CloseParen
@@ -289,9 +289,9 @@ messageContent
     OpenParen
     (
         String |
-        (ID|String) comparator (ID|String|Digit+) |
-        Digit+ comparator (ID|String) |
-        (String|ID) comparator Digit+ Per (Second|Hour|Minute|Day|Week|Month)
+        (ID|String) comparator (ID|String|digit) |
+        digit comparator (ID|String) |
+        (String|ID) comparator digit Per (Second|Hour|Minute|Day|Week|Month)
     )
     CloseParen
     ;
@@ -373,5 +373,9 @@ month
     ;
 
 year
+    : Digit+
+    ;
+
+digit
     : Digit+
     ;
