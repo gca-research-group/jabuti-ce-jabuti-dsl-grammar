@@ -49,6 +49,9 @@ Minute: 'Minute';
 Second: 'Second';
 When: 'when';
 Do: 'do';
+Text: 'text';
+Numeric: 'numeric';
+Boolean: 'boolean';
 
 Comma : ',' ;
 SemiColon : ';' ;
@@ -288,16 +291,37 @@ messageContent
     MessageContent
     OpenParen
     (
-        String |
-        (ID|String) comparator (ID|String|digit) |
-        digit comparator (ID|String) |
-        (String|ID) comparator digit Per (Second|Hour|Minute|Day|Week|Month)
+        messageContentBoolean |
+        (messageContentBoolean) (equal|notEqual) (messageContentBoolean) |
+        (messageContentNumeric) (equal|notEqual|greaterThan|lassThan|Greater|Lass) (messageContentNumeric) |
+        (messageContentText) (equal|notEqual) (messageContentText)
     )
     CloseParen
     ;
 
-comparator:
-    equal|notEqual|greaterThan|lassThan|Greater|Lass;
+messageContentBoolean
+    :
+    Boolean
+    OpenParen
+    (ID|String)
+    CloseParen
+    ;
+
+messageContentNumeric
+    :
+    (
+        Numeric OpenParen (ID|String) CloseParen |
+        digit
+    )
+    ;    
+
+messageContentText
+    :
+    (
+        Text OpenParen (ID|String) CloseParen |
+        String
+    )
+    ;
 
 equal
     :
