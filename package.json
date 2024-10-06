@@ -2,8 +2,8 @@
   "name": "jabuti-dsl-grammar-antlr",
   "version": "0.0.1",
   "author": "The Applied Computing Research Group <mailson.borges@sou.unijui.edu.br> (GCA)",
-  "homepage": "https://github.com/gca-research-group/jabuti-dsl-language-antlr#readme",
-  "description": "A implementation of Jabuti DSL grammar using ANTLR4.",
+  "homepage": "https://github.com/gca-research-group/jabuti-ce-jabuti-dsl-grammar#readme",
+  "description": "An implementation of Jabuti DSL grammar using ANTLR4.",
   "main": "index.js",
   "keywords": [
     "jabuti",
@@ -19,10 +19,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gca-research-group/jabuti-dsl-language-antlr.git"
+    "url": "git+https://github.com/gca-research-group/jabuti-ce-jabuti-dsl-grammar.git"
   },
   "bugs": {
-    "url": "https://github.com/gca-research-group/jabuti-dsl-language-antlr/issues"
+    "url": "https://github.com/gca-research-group/jabuti-ce-jabuti-dsl-grammar/issues"
   },
   "engines": {
     "npm": ">=9.0.0",
