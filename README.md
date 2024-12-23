@@ -13,6 +13,8 @@
     <img src="https://img.shields.io/badge/node-%3E%3D16.0.0-green.svg" />
 </p>
 
+> If you want see Jabuti DSL smart contract samples, you will find them *[here](https://github.com/gca-research-group/jabuti-ce-transformation-engine/tree/main/samples)*.
+
 # Table of contents
 - [Jabuti project papers](#jabuti-project-papers)
 - [Jabuti projetct repositories](#Jabuti-projetct-repositories)
@@ -85,7 +87,7 @@ The following are examples with correct and incorrect dates:
 
 ## Clauses
 
-Clauses can be of three types: rigth, obligation and prohibition. A clause require a rolePlayer, the executor, an operation and terms.
+Clauses can be of three types: rigth, obligation and prohibition. A clause require a rolePlayer, the executor, an operation, and terms. A clause can also trigger an event.
 
 RolePlayer can be:
 - process
@@ -107,33 +109,25 @@ Terms can be:
 - [MaxNumberOfOperation](#maxnumberofoperation)
 - [MessageContent](#messagecontent)
 
+Event can be:
+- onBreach: is trigered if the clause is violated
+- onSuccess: is trigered if the clause execution is successful
+
 Excerpt of clauses:
 ```
 clauses {
+  // the clause type can be rigth, obligation, or prohibition
   rigth clause1 {
     rolePlayer = application
     operation = request
+
     terms {
 
     }
+
+    onBreach(log("on breanch clause 1"))
+    onSuccess(log("on success clause 1"))
   }
-
-  obligation clause1 {
-    rolePlayer = application
-    operation = request
-    terms {
-
-    }
-  }
-
-  prohibition clause1 {
-    rolePlayer = process
-    operation = request
-    terms {
-
-    }
-  }
-
 }
 ```
 
