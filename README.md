@@ -72,7 +72,7 @@ The following are examples with correct and incorrect dates:
 
 ## Clauses
 
-Clauses can be of three types: rigth, obligation and prohibition. A clause require a rolePlayer, the executor, an operation, and terms. A clause can also trigger an event.
+Clauses can be of three types: rigth, obligation, and prohibition. A clause require a rolePlayer, the executor, an operation, and terms. A clause can also trigger an event.
 
 RolePlayer can be:
 - process
@@ -130,6 +130,8 @@ terms {
 
 ### SessionInterval
 
+Specifies the number of sessions allowed for a period of time.
+
 ```
 SessionInterval(1 per Day)
 ```
@@ -142,7 +144,7 @@ Allowed intervals:
 - Month
 
 ### TimeInterval
-Defines an interval that a integration should happens. The interval needs be a valid hour.
+Defines an interval in which an integration should happen. The interval needs to be a valid hour.
 
 ```
 TimeInterval(00:00:00 to 08:00:00)
@@ -153,7 +155,7 @@ Allowed patterns:
 - HH:MM:SS
 
 ### WeekDaysInterval
-Represents an interval during the week at which integration should occur.
+Represents an interval during the week in which the integration should occur.
 
 ```
 WeekDaysInterval(Monday to Wednesday)
