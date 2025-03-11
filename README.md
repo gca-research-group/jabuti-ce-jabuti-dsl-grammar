@@ -6,11 +6,13 @@
   <br>
 </h1>
 
-<h4 align="center">A implementation of Jabuti DSL grammar using <a href="https://www.antlr.org/" target="_blank">ANTLR4</a>.</h4>
+<h4 align="center">A implementation of Jabuti DSL grammar using <a href="https://www.antlr.org/" target="_blank">ANTLR4</a></h4>
 
 <p align="center">
-    <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
-    <img src="https://img.shields.io/badge/node-%3E%3D16.0.0-green.svg" />
+    <img alt="ANTLR" src="https://img.shields.io/badge/ANTLR-9F1A1A" />
+    <img alt="NodeJs" src="https://img.shields.io/badge/node-%3E%3D22.0.0-green.svg" />
+    <img alt="Java" src="https://img.shields.io/badge/Java-%3E%3D23-ED8B00">
+
 </p>
 
 > If you want see Jabuti DSL smart contract samples, you will find them _[here](https://github.com/gca-research-group/jabuti-ce-transformation-engine/tree/main/samples)_.
@@ -55,6 +57,7 @@
 ## How to compile
 
 - Requirements:
+
   - NodeJs +16
   - Java +11
 
