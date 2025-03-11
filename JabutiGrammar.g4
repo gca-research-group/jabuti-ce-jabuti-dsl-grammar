@@ -120,7 +120,7 @@ dates
     :
     Dates
     OpenBrace
-    (beginDate|dueDate)+
+    (beginDate Comma? | dueDate Comma?)+
     CloseBrace
     ;
     
@@ -128,7 +128,7 @@ parties
     :
     Parties
     OpenBrace
-    (application|process)+
+    (application  Comma? | process  Comma?)+
     CloseBrace
     ;
     
@@ -173,8 +173,8 @@ clause
     (Right|Prohibition|Obligation)
     ID
     OpenBrace
-    rolePlayer
-    operation
+    rolePlayer  Comma?
+    operation  Comma?
     terms
     (onBreach|OnSuccess)?
     CloseBrace

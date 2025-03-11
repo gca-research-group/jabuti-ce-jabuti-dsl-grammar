@@ -13,12 +13,14 @@
     <img src="https://img.shields.io/badge/node-%3E%3D16.0.0-green.svg" />
 </p>
 
-> If you want see Jabuti DSL smart contract samples, you will find them *[here](https://github.com/gca-research-group/jabuti-ce-transformation-engine/tree/main/samples)*.
+> If you want see Jabuti DSL smart contract samples, you will find them _[here](https://github.com/gca-research-group/jabuti-ce-transformation-engine/tree/main/samples)_.
 
 # Table of contents
+
 - [Project papers](#project-papers)
 - [Project repositories](#project-repositories)
 - [Jabuti DSL metamodel](#jabuti-dsl-metamodel)
+- [How To Compile](#how-to-compile)
 - [Variables](#variables)
 - [Dates](#dates)
 - [Clauses](#clauses)
@@ -30,31 +32,64 @@
   - [MessageContent](#messagecontent)
 
 ## Project papers
+
 - [Advances in a DSL to Specify Smart Contracts for Application Integration Processes](https://sol.sbc.org.br/index.php/cibse/article/view/20962)
 - [On the Need to Use Smart Contracts in Enterprise Application Integration](https://idus.us.es/handle/11441/140199)
 - [Jabuti CE: A Tool for Specifying Smart Contracts in the Domain of Enterprise Application Integration](https://www.scitepress.org/Link.aspx?doi=10.5220/0012413300003645)
 
 ## Project repositories
-- [Smart Contract Monitoring System](https://github.com/gca-research-group/smart-contract-execution-monitoring-system)
-- [Hyperledger Fabric Network Manager](https://github.com/gca-research-group/hyperledger-fabric-development-network-manager)
+
+- [Smart Contract Execution Monitoring System](https://github.com/gca-research-group/smart-contract-execution-monitoring-system)
+- [Hyperledger Fabric Development Network Manager](https://github.com/gca-research-group/hyperledger-fabric-development-network-manager)
 - [Transformation Engine](https://github.com/gca-research-group/jabuti-ce-transformation-engine)
 - [Jabuti CE](https://github.com/gca-research-group/jabuti-ce-vscode-plugin)
 - [Jabuti DSL Grammar](https://github.com/gca-research-group/jabuti-ce-jabuti-dsl-grammar)
 - [Jabuti XText/Xtend implementation](https://github.com/gca-research-group/dsl-smart-contract-eai)
 
 ## Jabuti DSL metamodel
+
 <p align="center">
     <img alt="Jabuti DSL Metamodel" src="assets/metamodel.svg" />
 </p>
+
+## How to compile
+
+- Requirements:
+  - NodeJs +16
+  - Java +11
+
+- Clone this repository
+
+```sh
+git clone https://github.com/gca-research-group/jabuti-ce-jabuti-dsl-grammar
+```
+
+- Install the dependencies
+
+```sh
+npm install
+```
+
+- Compile the project
+
+```sh
+npm run build
+```
+
+- Packing the code
+
+```sh
+npm pack
+```
 
 ## Variables
 
 The following list describes the rules for variables allowed in the Jabuti DSL grammar:
 
-- Alphanumeric Characters and Underscores: variable names can consist of letters (both uppercase and lowercase), digits, and underscores (_).
+- Alphanumeric Characters and Underscores: variable names can consist of letters (both uppercase and lowercase), digits, and underscores (\_).
 
 - No Leading Digits: variable names cannot begin with a digit. They must start with a letter or an underscore.
-No Spaces: Variable names cannot contain spaces. Use underscores or camelCase to separate words (e.g., first_name or firstName).
+  No Spaces: Variable names cannot contain spaces. Use underscores or camelCase to separate words (e.g., first_name or firstName).
 
 - Case Sensitivity: variable names are case-sensitive. For example, variable, Variable, and VARIABLE are three different variables.
 
@@ -67,11 +102,10 @@ The following are examples with correct and incorrect variable names:
 - <span style="color: green">&check;</span> **Var1**
 - <span style="color: green">&check;</span> **var_1**
 - <span style="color: green">&check;</span> **variable**
-- <span style="color: green">&check;</span> **_variable**
+- <span style="color: green">&check;</span> **\_variable**
 - <span style="color: red">&cross;</span> **1var**
 - <span style="color: red">&cross;</span> **1_var**
 - <span style="color: red">&cross;</span> **123**
-
 
 ## Dates
 
@@ -90,10 +124,12 @@ The following are examples with correct and incorrect dates:
 Clauses can be of three types: rigth, obligation, and prohibition. A clause require a rolePlayer, the executor, an operation, and terms. A clause can also trigger an event.
 
 RolePlayer can be:
+
 - process
 - application
 
 Operation can be:
+
 - request
 - response
 - write
@@ -102,6 +138,7 @@ Operation can be:
 - poll
 
 Terms can be:
+
 - [Timeout](#timeout)
 - [SessionInterval](#sessioninterval)
 - [TimeInterval](#timeinterval)
@@ -110,10 +147,12 @@ Terms can be:
 - [MessageContent](#messagecontent)
 
 Event can be:
+
 - onBreach: is trigered if the clause is violated
 - onSuccess: is trigered if the clause execution is successful
 
 Excerpt of clauses:
+
 ```
 clauses {
   // the clause type can be rigth, obligation, or prohibition
@@ -152,6 +191,7 @@ SessionInterval(1 per Day)
 ```
 
 Allowed intervals:
+
 - Second
 - Minute
 - Day
@@ -159,6 +199,7 @@ Allowed intervals:
 - Month
 
 ### TimeInterval
+
 Defines an interval in which an integration should happen. The interval needs to be a valid hour.
 
 ```
@@ -166,10 +207,12 @@ TimeInterval(00:00:00 to 08:00:00)
 ```
 
 Allowed patterns:
+
 - HH:MM
 - HH:MM:SS
 
 ### WeekDaysInterval
+
 Represents an interval during the week in which the integration should occur.
 
 ```
@@ -177,6 +220,7 @@ WeekDaysInterval(Monday to Wednesday)
 ```
 
 Days of week can be:
+
 - Monday
 - Tuesday
 - Wednesday
@@ -186,6 +230,7 @@ Days of week can be:
 - Sunday
 
 ### MaxNumberOfOperation
+
 Number of operations per unit of time
 
 ```
@@ -193,6 +238,7 @@ MaxNumberOfOperation(5 per Second)
 ```
 
 The unit of time can be:
+
 - Second
 - Hour
 - Minute
@@ -201,6 +247,7 @@ The unit of time can be:
 - Month
 
 ### MessageContent
+
 Extracts the content of the message payload.
 
 ```jabuti
@@ -220,14 +267,10 @@ MessageContent("xpath" > 100)
 MessageContent("xpath" <= 5000 per Month)
 ```
 
-## How to compile
-- Requirements:
-  - NodeJs +16
-  - Java +11
-- Execute the command `yarn build`
-
 ## License
+
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Contact
+
 For any questions or issues, please open an issue on GitHub or contact the maintainers.
