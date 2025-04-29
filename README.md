@@ -19,7 +19,7 @@
 
 # Table of contents
 
-- [Project papers](#project-papers)
+- [Papers](#papers)
 - [Project repositories](#project-repositories)
 - [Jabuti DSL metamodel](#jabuti-dsl-metamodel)
 - [How To Compile](#how-to-compile)
@@ -33,18 +33,25 @@
   - [MaxNumberOfOperation](#maxnumberofoperation)
   - [MessageContent](#messagecontent)
 
-## Project papers
+## Papers
 
-- [Advances in a DSL to Specify Smart Contracts for Application Integration Processes](https://sol.sbc.org.br/index.php/cibse/article/view/20962)
-- [On the Need to Use Smart Contracts in Enterprise Application Integration](https://idus.us.es/handle/11441/140199)
-- [Jabuti CE: A Tool for Specifying Smart Contracts in the Domain of Enterprise Application Integration](https://www.scitepress.org/Link.aspx?doi=10.5220/0012413300003645)
+- 2025
+  - [Proposing a Tool to Monitor Smart Contract Execution in Integration Processes](https://sol.sbc.org.br/index.php/sbsi_estendido/article/view/34617)
+  - [Towards a Smart Contract Toolkit for Application Integration](#)
+ 
+- 2024
+  - [Jabuti CE: A Tool for Specifying Smart Contracts in the Domain of Enterprise Application Integration](https://www.scitepress.org/Link.aspx?doi=10.5220/0012413300003645)
+
+- 2022
+  - [Advances in a DSL to Specify Smart Contracts for Application Integration Processes](https://sol.sbc.org.br/index.php/cibse/article/view/20962)
+  - [On the Need to Use Smart Contracts in Enterprise Application Integration](https://idus.us.es/handle/11441/140199)
 
 ## Project repositories
 
 - [Smart Contract Execution Monitoring System](https://github.com/gca-research-group/smart-contract-execution-monitoring-system)
 - [Hyperledger Fabric Development Network Manager](https://github.com/gca-research-group/hyperledger-fabric-development-network-manager)
 - [Transformation Engine](https://github.com/gca-research-group/jabuti-ce-transformation-engine)
-- [Jabuti CE](https://github.com/gca-research-group/jabuti-ce-vscode-plugin)
+- [Jabuti CE (VSCode Plug-in)](https://github.com/gca-research-group/jabuti-ce-vscode-plugin)
 - [Jabuti DSL Grammar](https://github.com/gca-research-group/jabuti-ce-jabuti-dsl-grammar)
 - [Jabuti XText/Xtend implementation](https://github.com/gca-research-group/dsl-smart-contract-eai)
 
